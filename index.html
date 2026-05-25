@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="u.css">
+
+    <script>
+        // دالة لجلب البيانات الجديدة بدون تحديث الصفحة
+        function fetchNewCards() {
+            fetch('data.json') // ملف يحتوي على البيانات الجديدة
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.querySelector('.picture');
+                    container.innerHTML = ''; // تنظيف العناصر القديمة
+
+                    // إضافة العناصر الجديدة تلقائياً
+                    data.forEach(item => {
+                        const card = document.createElement('div');
+                        card.className = 'card';
+                        card.innerText = item.text;
+                        container.appendChild(card);
+                    });
+                });
+        }
+
+        // تشغيل الدالة كل 5 ثوانٍ تلقائياً
+        setInterval(fetchNewCards, 5000);
+    </script>
+
+</head>
+
+<body>
+
+    <div class="picture">
+        <div class="card">1</div>
+
+        <div class="card">2</div>
+        <div class="card">3</div>
+    </div>
+
+
+</body>
+
+</html>
