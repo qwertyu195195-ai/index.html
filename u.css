@@ -1,5 +1,6 @@
 body {
-    background-color: #9e4e18;
+    background: linear-gradient(#80776b, #9b9a91, #828c8d);
+    height: 100vh;
 }
 
 .picture {
@@ -20,7 +21,7 @@ body {
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(to right, #ff0000, #00ff00, #0000ff);
+    background: linear-gradient(to right, #ff9c0893, #dfc90aa8, #04d9f57c);
 
     transform: translateX(100%);
     transition: transform 0.3s ease;
