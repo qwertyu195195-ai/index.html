@@ -6,44 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="u.css">
-
-    <script>
-        // دالة لجلب البيانات الجديدة بدون تحديث الصفحة
-        function fetchNewCards() {
-            fetch('data.json') // ملف يحتوي على البيانات الجديدة
-                .then(response => response.json())
-                .then(data => {
-                    const container = document.querySelector('.picture');
-                    container.innerHTML = ''; // تنظيف العناصر القديمة
-
-                    // إضافة العناصر الجديدة تلقائياً
-                    data.forEach(item => {
-                        const card = document.createElement('div');
-                        card.className = 'card';
-                        card.innerText = item.text;
-                        container.appendChild(card);
-                    });
-                });
-        }
-
-        // تشغيل الدالة كل 5 ثوانٍ تلقائياً
-        setInterval(fetchNewCards, 5000);
-    </script>
-
 </head>
 
 <body>
-
-    <div class="picture">
-        <div class="card">1</div>
-
-        <div class="card">2</div>
-        <div class="card">3</div>
-        <div class="card">4</div>
+    <div class="border">
+        <button class="brder-card">القائمه المنسدله</button>
+        <ul class="blpck">
+            <li><a class="bo" href="">تواصل</a></li>
+            <li><a class="bo" href="">حسابي</a></li>
+            <li><a class="bo" href="">تسجيل خروج</a></li>
+        </ul>
 
     </div>
+    <div class="io">
+        <h1 class="non">الازياء ملابس ماركات</h1>
+        <input class="more" type="text" placeholder="ابحث عن براند">
+    </div>
+    <div class="abass">
+        <button class="book2"><a class="book" href="#">تسويق الان</a></button>
 
-
+    </div>
 </body>
 
 </html>
